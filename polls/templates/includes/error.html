@@ -1,0 +1,31 @@
+ <!-- Error messages -->
+                     {% for field in form%}
+                        {% if field.errors%}
+                            <div class="col-12">
+                                 
+                                 {% for error in field.errors %}
+                                     <div class="alert alert-danger  alert-dismissible fade show position-relative" role="alert" > 
+                                         <span class="fw-bold">{{field.label_tag}}</span>
+                                         <span class="text-danger">{{error}}</span>
+                                          <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="alert" aria-label="Close"></button>
+                                     </div>
+                                 {% endfor %}
+                                </div>
+                        {% endif%}
+                    {% endfor %}
+                    {% comment %} Non-Field Errors {% endcomment %}
+                      {% for error in form.non_field_errors  %}
+                    <div class="alert alert-danger  alert-dismissible fade show position-relative" role="alert" > 
+                         <span class="text-danger">{{error}}</span>
+                          <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    <!--Success Message-->
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {% if message.tags == 'success'%}alert-success {% else %} alert-danger {% endif %} alert-dismissible fade show position-relative" role="alert" > 
+                         <span class="{% if message.tags == 'success'%} text-success {% else %} text-danger {% endif %}">{{message}}</span>
+                         <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
