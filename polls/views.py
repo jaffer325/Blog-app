@@ -218,7 +218,7 @@ def new_post(request):
 def edit_post(request,post_id):
    post = get_object_or_404(Post, id=post_id)
 
-    # Check ownership
+    # Check ownership Created by me
    if post.user != request.user:
         messages.error(request, "You are not allowed to edit this post.")
         return redirect('polls:dashboard')
