@@ -54,7 +54,8 @@ def detail(request,slug):
     try:
         post = Post.objects.get(slug=slug)
         related_posts = Post.objects.filter(Category = post.Category).exclude(pk=post.id)
-    
+
+        
     except Post.DoesNotExist:
         raise Http404("Post Does not Exist!")
     # log = logging.getLogger()

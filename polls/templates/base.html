@@ -1,6 +1,6 @@
 {% load static %}
 
-  this is a base template
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
-<body  class="d-flex flex-column min-vh-100" >
-    <header class="p-3 bg-dark text-white">
+<body  class="d-flex flex-column min-vh-100 p-100" >
+    <header class="p-3 bg-dark text-white sticky-top">
         <div class="row">
-            <div class="col">
-                <h3>Blog</h3>
+            <div class="col-12 justify-content-center d-flex col-md-6 justify-content-md-start">
+                <h3 class>My Blog</h3>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 d-flex mt-2 justify-content-md-end justify-content-center ">
                 <div class="d-flex justify-content-center gap-3">
                     <a class="text-light text-decoration-none" href="{% url 'polls:index'%}">Home</a>
                     <a class="text-light text-decoration-none" href="{% url 'polls:about'%}">About</a>
@@ -35,7 +35,7 @@
     </header>
     
     <!-- Dynamic content -->
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 bg-white">
         {% block content %}
         {% endblock %}
     </main>
