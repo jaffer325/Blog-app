@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="container-fluid ">
-            <div class="row my-2">
+            <div class="row my-2 justify-content-space">
                 <div class="col-6 col-lg-9">
                     <h2 >{{blog_title}}</h2>
                 </div>
@@ -24,7 +24,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4 ">
-                                        <img style="height:300; width:300" src="{{post.formatted_img_url}}" class="img-fluid" alt="...">
+                                        <img style="height:100px; width:300px" src="{{post.formatted_img_url}}" class="img-fluid" alt="...">
                                     </div>
                                     <div class="col-8">
                                         <h5 class="card-title">{{post.title}}</h5>
